@@ -50,7 +50,7 @@ char *dupstring(const char *string)
 }
 
 #ifdef USE_SPARSEPP
-#   define SPP_USE_SPP_ALLOC 1
+/* #   define SPP_USE_SPP_ALLOC 1 */
 #   define CUSTOM_MAP sparse_hash_map
 #   define CUSTOM_SET sparse_hash_set
 #   include <sparsepp/spp.h>
@@ -595,6 +595,8 @@ namespace symspell {
 	    }
 
 	    words[key] = count;
+
+	    wordsEnd = words.end();
 
 	    if (keyLen > maxDictionaryWordLength)
 		maxDictionaryWordLength = keyLen;
